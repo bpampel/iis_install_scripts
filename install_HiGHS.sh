@@ -6,7 +6,17 @@ cmake --build .
 cmake --install .
 
 # create script to add variables
-echo "\
-export PATH=$INSTALLDIR/bin:$PATH
-export LD_LIBRARY_PATH=$INSTALLDIR/lib:$LD_LIBRARY_PATH
+echo "
+# Add environment variables for HiGHS
+# usage: source sourceme.sh
+#
+# This version of HiGHS was compiled and installed on $(date)
+#
+export PATH=\${INSTALLDIR}/bin:\${PATH}
+export INCLUDE=\${INSTALLDIR}/include:\${INCLUDE}
+export CPATH=\${INSTALLDIR}/include:\${CPATH}
+export LIBRARY_PATH=\${INSTALLDIR}/lib:\${LIBRARY_PATH}
+export LD_LIBRARY_PATH=\${INSTALLDIR}/lib:\${LD_LIBRARY_PATH}
+# ------------------------------------------------------------
+#
 " > $INSTALLDIR/sourceme.sh
