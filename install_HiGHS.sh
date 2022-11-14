@@ -1,6 +1,8 @@
 INSTALL_DIR=$(pwd)/install
 mkdir build $INSTALL_DIR
 cd build
+# -fPIC seems to be needed for the highspy interface
+export CXXFLAGS='-fPIC'
 cmake -DFAST_BUILD=ON -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR ..
 cmake --build .
 cmake --install .
