@@ -12,11 +12,12 @@ echo "
 #
 # This version of HiGHS was compiled and installed on $(date)
 #
-export PATH=${INSTALLDIR}/bin:${PATH}
-export INCLUDE=${INSTALLDIR}/include:${INCLUDE}
-export CPATH=${INSTALLDIR}/include:${CPATH}
-export LIBRARY_PATH=${INSTALLDIR}/lib:${LIBRARY_PATH}
-export LD_LIBRARY_PATH=${INSTALLDIR}/lib:${LD_LIBRARY_PATH}
+export HIGHS_INSTALL=${INSTALLDIR}
+export PATH=\${INSTALLDIR}/bin:\${PATH}
+export INCLUDE=\${INSTALLDIR}/include:\${INCLUDE}
+export CPATH=\${INSTALLDIR}/include:\${CPATH}
+export LIBRARY_PATH=\${INSTALLDIR}/lib:\${LIBRARY_PATH}
+export LD_LIBRARY_PATH=\${INSTALLDIR}/lib:\${LD_LIBRARY_PATH}
 # ------------------------------------------------------------
 #
 " > $INSTALLDIR/sourceme.sh
