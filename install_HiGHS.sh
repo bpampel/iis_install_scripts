@@ -1,7 +1,7 @@
-INSTALLDIR=$(pwd)/install
-mkdir build $INSTALLDIR
+INSTALL_DIR=$(pwd)/install
+mkdir build $INSTALL_DIR
 cd build
-cmake -DFAST_BUILD=ON -DCMAKE_INSTALL_PREFIX=$INSTALLDIR ..
+cmake -DFAST_BUILD=ON -DCMAKE_INSTALL_PREFIX=$INSTALL_DIR ..
 cmake --build .
 cmake --install .
 
@@ -12,12 +12,12 @@ echo "
 #
 # This version of HiGHS was compiled and installed on $(date)
 #
-export HIGHS_INSTALL=${INSTALLDIR}
-export PATH=\${INSTALLDIR}/bin:\${PATH}
-export INCLUDE=\${INSTALLDIR}/include:\${INCLUDE}
-export CPATH=\${INSTALLDIR}/include:\${CPATH}
-export LIBRARY_PATH=\${INSTALLDIR}/lib:\${LIBRARY_PATH}
-export LD_LIBRARY_PATH=\${INSTALLDIR}/lib:\${LD_LIBRARY_PATH}
+export HIGHS_INSTALL_DIR=${INSTALL_DIR}
+export PATH=\${HIGHS_INSTALL_DIR}/bin:\${PATH}
+export INCLUDE=\${HIGHS_INSTALL_DIR}/include:\${INCLUDE}
+export CPATH=\${HIGHS_INSTALL_DIR}/include:\${CPATH}
+export LIBRARY_PATH=\${HIGHS_INSTALL_DIR}/lib:\${LIBRARY_PATH}
+export LD_LIBRARY_PATH=\${HIGHS_INSTALL_DIR}/lib:\${LD_LIBRARY_PATH}
 # ------------------------------------------------------------
 #
-" > $INSTALLDIR/sourceme.sh
+" > $INSTALL_DIR/sourceme.sh
